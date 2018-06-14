@@ -1,0 +1,2 @@
+1. Wait time to be made to allow load, proposed split of file
+2. PhantomJS integration
