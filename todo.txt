@@ -1,2 +1,10 @@
-1. Wait time to be made to allow load, proposed split of file
+1. Wait time to be made to allow load before current url retrieved, proposed split of file
 2. PhantomJS integration
+3. faster connection of http socket
+4. physical close of Firefox browser
+5. structure as methods
+6. SSL certificate warning resolving - under author development under branch ssl_certi
+
+
+Functionality:
+1. Wikipedia top article streaming
