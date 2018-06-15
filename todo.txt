@@ -1,8 +1,6 @@
-1. Wait time to be made to allow load before current url retrieved, proposed split of file - under author developement under branch new_page_load_integration
-2. PhantomJS integration
-3. faster connection of http socket
-4. physical close of Firefox browser
-5. structure as methods
+1. PhantomJS integration
+2. faster connection of http socket
+3. structure as methods
 
 
 Functionality:
