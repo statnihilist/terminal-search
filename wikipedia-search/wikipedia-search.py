@@ -8,6 +8,7 @@
 
 # importing modules
 import urllib3
+import certifi
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -19,11 +20,12 @@ browser.get('https://en.wikipedia.org')
 # searching in seach box
 elem = browser.find_element_by_name('search')
 elem.send_keys('harvard university' + Keys.RETURN)
-delay = 5
 url = browser.current_url
 
 # opening a socket
-http = urllib3.PoolManager()
+http = urllib3.PoolManager(
+    cert_reqs = 'CERT_REQUIRED',
+    ca_certs=certifi.where())
 source = http.request('GET', url)
 
 # reading the data in a variable
