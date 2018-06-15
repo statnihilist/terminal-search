@@ -1,5 +1,5 @@
 1. PhantomJS integration
-2. faster connection of http socket
+2. faster connection of http socket - under author development -> branch fast_socket
 3. structure as methods
 
 
