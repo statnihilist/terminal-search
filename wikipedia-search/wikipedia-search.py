@@ -9,6 +9,8 @@
 # importing modules
 import urllib3
 import certifi
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.expected_conditions import staleness_of
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -20,6 +22,16 @@ browser.get('https://en.wikipedia.org')
 # searching in seach box
 elem = browser.find_element_by_name('search')
 elem.send_keys('harvard university' + Keys.RETURN)
+
+# to handle loading of new pages in selenium
+# through the method of checking staleness of page
+# credits: http://www.obeythetestinggoat.com/how- \
+# to-get-selenium-to-wait-for-page-load-after-a-click.html
+timeout = 30
+old_page = browser.find_element_by_tag_name('html')
+WebDriverWait(browser, timeout).until(staleness_of(old_page))
+
+# getting the url of the new page
 url = browser.current_url
 
 # opening a socket
