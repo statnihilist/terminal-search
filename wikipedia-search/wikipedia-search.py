@@ -8,15 +8,20 @@
 # 2. Firefox is installed
 
 # importing modules
-import requests
+from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import staleness_of
-from bs4 import BeautifulSoup
-from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import requests
+from bs4 import BeautifulSoup
+
+# setting up a headless browser
+options = Options()
+options.set_headless(headless = True)
 
 # opening site in web browser
-browser = webdriver.Firefox()
+browser = webdriver.Firefox(firefox_options = options)
 browser.get('https://en.wikipedia.org')
 
 # searching in seach box

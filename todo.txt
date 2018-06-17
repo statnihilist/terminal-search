@@ -1,6 +1,5 @@
-1. PhantomJS integration - under authore development -> branch ghost_browser
-2. faster connection of http socket - under author development -> branch fast_socket
-3. structure as methods
+1. faster connection of http socket - under author development -> branch fast_socket
+2. structure as methods
 
 
 Functionality:
