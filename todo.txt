@@ -1,14 +1,13 @@
 1. faster connection of http socket (very high wall times, to be tested on faster networks)
 2. structure as methods
-3. generalise search
-4. add option for faulty search (partially removes one assumption)
-5. convert into command on terminal
-6. give option to search part of page on wikipedia
-7. add functionality for chrome
-8. auto detect default browser
-9. auto use default browser
-10.Wikipedia top articles streaming and search option
-11.static website on Jekyll (to represent project)
+3. add option for faulty search (partially removes one assumption)
+4. convert into command on terminal - under author developement -> branch command_convert
+5. give option to search part of page on wikipedia
+6. add functionality for chrome
+7. auto detect default browser
+8. auto use default browser
+9. Wikipedia top articles streaming and search option
+10.static website on Jekyll (to represent project)
 
 
 Long-term:

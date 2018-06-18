@@ -13,8 +13,13 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import staleness_of
 from selenium.webdriver.common.keys import Keys
+import sys
 import requests
 from bs4 import BeautifulSoup
+
+# handling parameters obtained from terminal
+search = sys.argv[1:]
+search = ' '.join(search)
 
 # setting up a headless browser
 options = Options()
@@ -26,7 +31,8 @@ browser.get('https://en.wikipedia.org')
 
 # searching in seach box
 elem = browser.find_element_by_name('search')
-elem.send_keys('harvard university' + Keys.RETURN)   # make it more generalised
+print(type(search))
+elem.send_keys(search + Keys.RETURN)   # make it more generalised
 
 # to handle loading of new pages in selenium
 # through the method of checking staleness of page
