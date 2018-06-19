@@ -33,3 +33,37 @@
 1529404922850	Marionette	INFO	Listening on port 37893
 1529404922953	Marionette	WARN	TLS certificate errors will be ignored for this session
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529405655658	geckodriver	INFO	geckodriver 0.20.1
+1529405655663	geckodriver	INFO	Listening on 127.0.0.1:34133
+1529405656681	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.7ormRaFKnOZG"
+*** You are running in headless mode.
+1529405660659	Marionette	INFO	Listening on port 41125
+1529405660713	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529405682939	geckodriver	INFO	geckodriver 0.20.1
+1529405682943	geckodriver	INFO	Listening on 127.0.0.1:36233
+1529405683959	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.1f0lfRinTKSd"
+*** You are running in headless mode.
+1529405687788	Marionette	INFO	Listening on port 34393
+1529405687884	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529405727449	geckodriver	INFO	geckodriver 0.20.1
+1529405727453	geckodriver	INFO	Listening on 127.0.0.1:35879
+1529405728469	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.aKT8Qg0XQ1Uc"
+*** You are running in headless mode.
+1529405731882	Marionette	INFO	Listening on port 40899
+1529405731886	Marionette	WARN	TLS certificate errors will be ignored for this session
+1529405773190	geckodriver	INFO	geckodriver 0.20.1
+1529405773194	geckodriver	INFO	Listening on 127.0.0.1:45667
+1529405774210	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.ljLw08LW6wBr"
+*** You are running in headless mode.
+1529405778260	Marionette	INFO	Listening on port 38849
+1529405778329	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x540027,name=PNecko::Msg_RemoveRequestContext) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Child 16776, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-m9FtQy/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
