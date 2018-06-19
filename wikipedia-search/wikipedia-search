@@ -7,6 +7,7 @@
 #    wikipedia
 #    eg. 'harvard university' will work
 # 2. Firefox is installed
+# 3. geckodriver is installed
 
 # importing modules
 from selenium import webdriver
@@ -26,8 +27,13 @@ search = ' '.join(search)
 options = Options()
 options.set_headless(headless = True)
 
+# setting path to log unavoidable logs
+path_file = sys.argv[0]
+path_dir = '/'.join(path_file.split('/')[:-1])
+log = path_dir + '/log/geckodriver.log'
+
 # opening site in web browser
-browser = webdriver.Firefox(firefox_options = options)
+browser = webdriver.Firefox(firefox_options = options, log_path = log)
 browser.get('https://en.wikipedia.org')
 
 # searching in seach box
