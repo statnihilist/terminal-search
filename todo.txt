@@ -6,8 +6,14 @@
 6. auto detect default browser
 7. auto use default browser
 8. Wikipedia top articles streaming and search option
-9.static website on Jekyll (to represent project)
+9. static website on Jekyll (to represent project)
 10.add .gitignore files
+11.selenium, firefox and geckodriver assumptions to be given instructions and stated
+12.autodetect geckodriver and add path of it
+13.resolve naming problem if any
+14.coordinates exception handler
+15.edit description (no noise format) and insights
+16.dropdowns on terminal
 
 
 Long-term:
