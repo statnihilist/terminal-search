@@ -8,6 +8,7 @@
 8. auto use default browser
 9. Wikipedia top articles streaming and search option
 10.static website on Jekyll (to represent project)
+11.disable geckodriver logs
 
 
 Long-term:

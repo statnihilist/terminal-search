@@ -5,9 +5,10 @@ Currently supported only for wikipedia. Functionality to be increased eventually
 
 Usage : 
 1. Clone into a local repository
-2. Open a terminal in the folder with the .py file
-3. Change `#!/home/yash/anaconda3/bin/python` in line 1 to your local interpreter. 
-3. Type `./wikipedia_search.py <name of topic>` in terminal.
+2. Open a terminal in the folder with the wikipedia-search file
+3. Change `#!<path to interpreter>/python` in line 1 to your local interpreter. 
+4. In .bashrc, add `PATH=$PATH:<path to folder>/terminal-search/wikipedia-search`
+5. Type `wikipedia_search <name of topic>` in any terminal
 
 Proposed changes are given in todo.txt in each folder.
 
