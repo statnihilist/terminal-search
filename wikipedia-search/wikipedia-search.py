@@ -1,3 +1,4 @@
+#!/home/yash/anaconda3/bin/python
 # This is a simple webscraper to scrap summary of any topic from
 # "https://en.wikipedia.org"
 #
@@ -31,7 +32,6 @@ browser.get('https://en.wikipedia.org')
 
 # searching in seach box
 elem = browser.find_element_by_name('search')
-print(type(search))
 elem.send_keys(search + Keys.RETURN)   # make it more generalised
 
 # to handle loading of new pages in selenium

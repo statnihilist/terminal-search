@@ -6,7 +6,8 @@ Currently supported only for wikipedia. Functionality to be increased eventually
 Usage : 
 1. Clone into a local repository
 2. Open a terminal in the folder with the .py file
-3. Type `python3 wikipedia_search.py <name of topic>`
+3. Change `#!/home/yash/anaconda3/bin/python` in line 1 to your local interpreter. 
+3. Type `./wikipedia_search.py <name of topic>` in terminal.
 
 Proposed changes are given in todo.txt in each folder.
 
