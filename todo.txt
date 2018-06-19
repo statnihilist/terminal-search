@@ -1,5 +1,5 @@
 1. faster connection of http socket (very high wall times, to be tested on faster networks)
-2. structure as methods
+2. structure as methods - under author development -> branch structure_formation
 3. add option for faulty search (partially removes one assumption)
 4. give option to search part of page on wikipedia
 5. add functionality for chrome
@@ -7,8 +7,7 @@
 7. auto use default browser
 8. Wikipedia top articles streaming and search option
 9.static website on Jekyll (to represent project)
-10.disable geckodriver logs - under author development -> branch log_disable
-11.add .gitignore files
+10.add .gitignore files
 
 
 Long-term:
