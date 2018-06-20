@@ -1,8 +1,7 @@
 1. faster connection of http socket (very high wall times, to be tested on faster networks)
-2. structure as methods - under author development -> branch structure_formation
 3. add option for faulty search (partially removes one assumption)
 4. give option to search part of page on wikipedia
-5. add functionality for chrome
+5. add functionality for chrome - under author development -> branch chrome_browser
 6. auto detect default browser
 7. auto use default browser
 8. Wikipedia top articles streaming and search option
@@ -14,7 +13,7 @@
 14.coordinates exception handler
 15.edit description (no noise format) and insights
 16.dropdowns on terminal
-
+17.separate search functionality
 
 Long-term:
 1. add functionality for google search

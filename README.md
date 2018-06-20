@@ -10,6 +10,8 @@ Usage :
 4. In .bashrc, add `PATH=$PATH:<path to folder>/terminal-search/wikipedia-search`
 5. Type `wikipedia_search <name of topic>` in any terminal
 
+Currently under author development: add functionality for chrome -> branch chrome_browser
+
 Proposed changes are given in todo.txt in each folder.
 
 PS : To suggest additional functionality, contact me at yash.singh.k08@gmail.com with the
