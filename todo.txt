@@ -1,9 +1,8 @@
 1. faster connection of http socket (very high wall times, to be tested on faster networks)
+2. ship drivers in directory (calls through os, see permissions)
 3. add option for faulty search (partially removes one assumption)
 4. give option to search part of page on wikipedia
-5. add functionality for chrome - under author development -> branch chrome_browser
-6. auto detect default browser
-7. auto use default browser
+6. auto detect default browser/auto use default browser - under author development -> branch auto_browser
 8. Wikipedia top articles streaming and search option
 9. static website on Jekyll (to represent project)
 10.add .gitignore files
