@@ -10,7 +10,7 @@ Usage :
 4. In .bashrc, add `PATH=$PATH:<path to folder>/terminal-search/wikipedia-search`
 5. Type `wikipedia_search <name of topic>` in any terminal
 
-Currently under author development: add functionality for chrome -> branch chrome_browser
+Currently under author development: auto detect/use use default browser -> branch auto_browser
 
 Proposed changes are given in todo.txt in each folder.
 
