@@ -11,8 +11,6 @@
 
 # importing modules
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import staleness_of
 from selenium.webdriver.common.keys import Keys
@@ -27,7 +25,12 @@ def search():
     return input
 
 # setting up a headless browser
-def options():
+def options(flag):
+    if (flag == 'firefox'):
+        from selenium.webdriver.firefox.options import Options
+    elif (flag == 'chrome'):
+        from selenium.webdriver.chrome.options import Options
+
     options = Options()
     options.set_headless(headless = True)
     return options
@@ -48,12 +51,12 @@ def choose_browser(options, log_path):
     choice_input = input()
     while True:
         if (choice_input == '1' or choice_input.lower() == 'firefox'):
-            browser = webdriver.Firefox(log_path= \
+            browser = webdriver.Firefox(firefox_options = options('firefox'), log_path= \
             log_path())
             flag = 'firefox'
             return browser, flag
         elif (choice_input == '2' or choice_input.lower() == 'chrome'):
-            browser = webdriver.Chrome()
+            browser = webdriver.Chrome(chrome_options = options('chrome'))
             flag = 'chrome'
             return browser, flag
         else:

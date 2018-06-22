@@ -1018,3 +1018,18 @@ IPDL protocol error: Handler returned error code!
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529648537328	geckodriver	INFO	geckodriver 0.20.1
+1529648537352	geckodriver	INFO	Listening on 127.0.0.1:59761
+1529648538350	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.EyWPDTVyTKl4"
+*** You are running in headless mode.
+1529648542608	Marionette	INFO	Listening on port 44011
+1529648542683	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529649081084	geckodriver	INFO	geckodriver 0.20.1
+1529649081117	geckodriver	INFO	Listening on 127.0.0.1:53637
+1529649082106	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.d64C99i2IjsY"
+*** You are running in headless mode.
+1529649086671	Marionette	INFO	Listening on port 34507
+1529649086732	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=startup&only=scripts&skin=vector, line 1: ReferenceError: mw is not defined
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
