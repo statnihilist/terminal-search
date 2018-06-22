@@ -1,4 +1,10 @@
 # terminal-search
+## firefox branch
+
+#### This branch is for firefox functionality
+#### For dual users  -> master
+#### For chrome user -> chrome_branch
+
 A terminal app to search stuff online automatically and display a summary
 
 Currently supported only for wikipedia. Functionality to be increased eventually.
@@ -10,9 +16,11 @@ Usage :
 4. In .bashrc, add `PATH=$PATH:<path to folder>/terminal-search/wikipedia-search`
 5. Type `wikipedia_search <name of topic>` in any terminal
 
-Currently under author development: auto detect/use use default browser -> branch auto_browser
+Currently under author development: None
 
 Proposed changes are given in todo.txt in each folder.
+
+Naming convention for development branches : `firefox_branch_<developmenttype>`
 
 PS : To suggest additional functionality, contact me at yash.singh.k08@gmail.com with the
      subject as the repo name and to add changes, give a pull request.
