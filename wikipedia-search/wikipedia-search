@@ -5,14 +5,13 @@
 #1. The search is well-formed i.e. it can be searched directly searched in
 #   wikipedia
 #   eg. 'harvard university' will work
-#2. Firefox or Chrome is installed
-#3. geckodriver or chromedriver is installed respectively
+#2. Chrome is installed
+#3. chromedriver is installed
 
 
 # importing modules
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support.expected_conditions import staleness_of
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import sys
 import requests
@@ -25,63 +24,21 @@ def search():
     return input
 
 # setting up a headless browser
-def options(flag):
-    if (flag == 'firefox'):
-        from selenium.webdriver.firefox.options import Options
-    elif (flag == 'chrome'):
-        from selenium.webdriver.chrome.options import Options
-
+def options():
     options = Options()
     options.set_headless(headless = True)
     return options
 
-# setting path to log unavoidable logs
-def log_path():
-    path_file = sys.argv[0]
-    path_dir = '/'.join(path_file.split('/')[:-1])
-    log_path = path_dir + '/log/geckodriver.log'
-    return log_path
-
-# choosing browser
-def choose_browser(options, log_path):
-    print('\nPlease choose your browser : ')
-    print('1. Firefox')
-    print('2. Chrome')
-    print('\nChoice :', end = ' ')
-    choice_input = input()
-    while True:
-        if (choice_input == '1' or choice_input.lower() == 'firefox'):
-            browser = webdriver.Firefox(firefox_options = options('firefox'), log_path= \
-            log_path())
-            flag = 'firefox'
-            return browser, flag
-        elif (choice_input == '2' or choice_input.lower() == 'chrome'):
-            browser = webdriver.Chrome(chrome_options = options('chrome'))
-            flag = 'chrome'
-            return browser, flag
-        else:
-            print('Invalid choice. Please try again! ')
-            print('\nChoice :', end = ' ')
-            choice_input = input()
-
 # navigate to page via selenium
-def extract_page(search, choice, choice_flag):
+def extract_page(search, options):
 
     # opening site in web browser
-    browser = choice
+    browser = webdriver.Chrome(chrome_options = options())
     browser.get('https://en.wikipedia.org')
 
     # searching in seach box
-    elem = browser.find_element_by_name('search')
+    elem = browser.find_element(by = 'name', value = 'search')
     elem.send_keys(search() + Keys.RETURN)
-
-    # to handle loading of new pages in selenium
-    # through the method of checking staleness of page
-    # only for firefox
-    if (choice_flag == 'firefox'):
-        timeout = 30
-        old_page = browser.find_element_by_tag_name('html')
-        WebDriverWait(browser, timeout).until(staleness_of(old_page))
 
     # getting the url of the new page
     url = browser.current_url
@@ -112,7 +69,6 @@ def print_part(scrap):
     return req_para.text
 
 # main
-choice, choice_flag = choose_browser(options, log_path)
-addr = extract_page(search, choice, choice_flag)
+addr = extract_page(search, options)
 scrap = scraper(addr)
 print('\nSummary:\n', print_part(scrap))
