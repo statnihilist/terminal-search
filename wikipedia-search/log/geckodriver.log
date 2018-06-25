@@ -1033,3 +1033,11 @@ IPDL protocol error: Handler returned error code!
 1529649086732	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=startup&only=scripts&skin=vector, line 1: ReferenceError: mw is not defined
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529910089725	geckodriver	INFO	geckodriver 0.20.1
+1529910089750	geckodriver	INFO	Listening on 127.0.0.1:41265
+1529910090746	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.9PCciB1fCmTP"
+*** You are running in headless mode.
+1529910095109	Marionette	INFO	Listening on port 37879
+1529910095175	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=startup&only=scripts&skin=vector, line 1: ReferenceError: mw is not defined
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
