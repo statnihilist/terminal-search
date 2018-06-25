@@ -1,4 +1,4 @@
-#!/home/yash/anaconda3/bin/python
+#!/usr/bin/env python3
 #This is a simple webscraper to scrap summary of any topic from
 #https://en.wikipedia.org
 #Assumptions :

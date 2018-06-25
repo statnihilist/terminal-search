@@ -1041,3 +1041,18 @@ JavaScript error: https://en.wikipedia.org/w/load.php?debug=false&lang=en&module
 1529910095175	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=startup&only=scripts&skin=vector, line 1: ReferenceError: mw is not defined
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529919458525	geckodriver	INFO	geckodriver 0.20.1
+1529919458603	geckodriver	INFO	Listening on 127.0.0.1:38223
+1529919459462	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.O0pR5Tm5Qrwj"
+*** You are running in headless mode.
+1529919469570	Marionette	INFO	Listening on port 33331
+1529919469677	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=jquery%2Cmediawiki%7Cmediawiki.legacy.wikibits&only=scripts&skin=vector&version=18kdz1s, line 50: NS_ERROR_NOT_INITIALIZED: 
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529923042330	geckodriver	INFO	geckodriver 0.20.1
+1529923042351	geckodriver	INFO	Listening on 127.0.0.1:49155
+1529923043342	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.RmEVkPZeFbUp"
+*** You are running in headless mode.
+1529923047317	Marionette	INFO	Listening on port 45531
+1529923047370	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
