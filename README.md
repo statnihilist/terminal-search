@@ -12,6 +12,7 @@ Currently supported only for wikipedia. Functionality to be increased eventually
 Requirements:
 1. Python 3.4+
 2. Firefox or Chrome (atleast one)
+3. Tested only on Ubuntu 18.04
 
 Usage : 
 1. Clone into a local repository
