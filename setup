@@ -1,0 +1,6 @@
+sudo ln -s $(pwd)/drivers/geckodriver /usr/local/bin/geckodriver
+sudo ln -s $(pwd)/drivers/chromedriver /usr/local/bin/chromedriver
+sudo pip3 install beautifulsoup4
+sudo pip3 install requests
+sudo pip3 install selenium
+sudo echo 'export PATH=$PATH:$(pwd)/wikipedia-search' >> ~/.bashrc

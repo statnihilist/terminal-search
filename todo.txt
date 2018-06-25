@@ -1,14 +1,10 @@
 1. faster connection of http socket (very high wall times, performs on faster networks >30Mbps)
-2. ship drivers in directory (calls through os, see permissions)
 3. add option for faulty search (partially removes one assumption)
 4. give option to search part of page on wikipedia
 7. Wikipedia search results option
 8. Wikipedia top articles streaming
 9. static website on Jekyll (to represent project)
 10.add .gitignore files
-11.selenium, firefox and geckodriver assumptions to be given instructions and stated
-12.autodetect geckodriver and add path of it
-13.resolve naming problem if any
 14.coordinates exception handler
 15.edit description (no noise format) and insights
 16.dropdowns on terminal
