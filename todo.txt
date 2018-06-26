@@ -8,7 +8,6 @@
 14.coordinates exception handler
 15.edit description (no noise format) and insights
 16.dropdowns on terminal
-17.separate search functionality -> under development
 
 Long-term:
 1. add functionality for google search

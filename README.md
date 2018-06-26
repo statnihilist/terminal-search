@@ -20,7 +20,7 @@ Usage :
 3. Close the present terminal or alternatively run `source .bashrc` 
 3. Type `wikipedia_search <name of topic>` in any terminal
 
-Currently under author development: master_separatesearch
+Currently under author development: None
 
 Proposed changes are given in todo.txt.
 
