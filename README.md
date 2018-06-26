@@ -11,15 +11,16 @@ Currently supported only for wikipedia. Functionality to be increased eventually
 
 Requirements:
 1. Python 3.4+
-2. Firefox or Chrome (atleast one)
+2. Firefox or Chrome (atleast one, latest versions)
 3. Tested only on Ubuntu 18.04
 
 Usage : 
 1. Clone into a local repository
-2. Run the `setup` file in a terminal as `<path to file>/setup` 
+2. Run the `setup` file in a terminal as `<path to file>/setup`
+3. Close the present terminal or alternatively run `source .bashrc` 
 3. Type `wikipedia_search <name of topic>` in any terminal
 
-Currently under author development: master_separatesearch
+Currently under author development: None
 
 Proposed changes are given in todo.txt.
 

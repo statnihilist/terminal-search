@@ -20,9 +20,14 @@ from bs4 import BeautifulSoup
 
 # handling parameters obtained from terminal
 def search():
-    input = sys.argv[1:]
-    input = ' '.join(input)
-    return input
+    if len(sys.argv) == 1:
+        print('\nYou did not specify what to search. Please sepecify now!')
+        print('Search :', end = ' ')
+        search_input = input()
+    else:
+        search_input = sys.argv[1:]
+        search_input = ' '.join(search_input)
+    return search_input
 
 # setting up a headless browser
 def options(flag):
@@ -44,6 +49,7 @@ def log_path():
 
 # choosing browser
 def choose_browser(options, log_path):
+    print('\nWelcome to Wikipedia-Search!')
     print('\nPlease choose your browser : ')
     print('1. Firefox')
     print('2. Chrome')
