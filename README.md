@@ -19,7 +19,7 @@ Usage :
 2. Run the `setup` file in a terminal as `<path to file>/setup` 
 3. Type `wikipedia_search <name of topic>` in any terminal
 
-Currently under author development: None
+Currently under author development: master_separatesearch
 
 Proposed changes are given in todo.txt.
 
