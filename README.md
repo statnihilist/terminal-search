@@ -18,9 +18,10 @@ Usage :
 1. Clone into a local repository
 2. Run the `setup` file in a terminal as `<path to file>/setup`
 3. Close the present terminal or alternatively run `source .bashrc` 
-3. Type `wikipedia_search <name of topic>` in any terminal
+4. For indirect search and to avail other functionality, type `wikipedia_search` in any terminal
+5. For direct noise-free search, type `wikipedia_search <name of topic>` in any terminal
 
-Currently under author development: None
+Currently under author development: top articles and other home page categories
 
 Proposed changes are given in todo.txt.
 
