@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 #This is a simple webscraper to scrap summary of any topic from
 #https://en.wikipedia.org
-#Assumptions :
-#1. The search is well-formed i.e. it can be searched directly searched in
+#Assumption :
+#   The search is well-formed i.e. it can be searched directly searched in
 #   wikipedia
 #   eg. 'harvard university' will work
-#2. Firefox or Chrome is installed
-#3. geckodriver or chromedriver is installed respectively
 
 
 # importing modules
@@ -18,16 +16,61 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
+
+# top article streaming
+def top_article():
+    # no chnanges to be done for this
+    return
+
+
+# custom search
+def custom_search(browser):
+    print('\nPlease specify search :', end = ' ')
+
+    # searching in search box
+    elem = browser.find_element(by = 'name', value = 'search')
+    elem.send_keys(input() + Keys.RETURN)
+
+    # to handle loading of new pages in selenium
+    # through the method of checking staleness of page
+    # only for firefox
+    if (choice_flag == 'firefox'):
+        timeout = 30
+        old_page = browser.find_element_by_tag_name('html')
+        WebDriverWait(browser, timeout).until(staleness_of(old_page))
+
+    return
+
+
+# what to be streamed for the user
+def search_kind(browser):
+    print('\nWhat would you like to know?')
+    print("1. Today's featured article")
+    print('2. Custom Search')
+    print('\nChoice :', end = ' ')
+    search_kind_input = input()
+    while True:
+        if(search_kind_input == '1'):
+            top_article()
+            return
+        elif(search_kind_input == '2'):
+            custom_search(browser)
+            return
+        else:
+            print('Invalid choice. Please try again!')
+            print('Choice :', end = ' ')
+            search_kind_input = input()
+
+
 # handling parameters obtained from terminal
 def search():
     if len(sys.argv) == 1:
-        print('\nYou did not specify what to search. Please sepecify now!')
-        print('Search :', end = ' ')
-        search_input = input()
+        search_input = search_kind()
     else:
         search_input = sys.argv[1:]
         search_input = ' '.join(search_input)
     return search_input
+
 
 # setting up a headless browser
 def options(flag):
@@ -40,6 +83,7 @@ def options(flag):
     options.set_headless(headless = True)
     return options
 
+
 # setting path to log unavoidable logs
 def log_path():
     path_file = sys.argv[0]
@@ -47,8 +91,9 @@ def log_path():
     log_path = path_dir + '/log/geckodriver.log'
     return log_path
 
+
 # choosing browser
-def choose_browser(options, log_path):
+def choose_browser():
     print('\nWelcome to Wikipedia-Search!')
     print('\nPlease choose your browser : ')
     print('1. Firefox')
@@ -57,8 +102,8 @@ def choose_browser(options, log_path):
     choice_input = input()
     while True:
         if (choice_input == '1' or choice_input.lower() == 'firefox'):
-            browser = webdriver.Firefox(firefox_options = options('firefox'), log_path= \
-            log_path())
+            browser = webdriver.Firefox(firefox_options = options('firefox'), \
+            log_path = log_path())
             flag = 'firefox'
             return browser, flag
         elif (choice_input == '2' or choice_input.lower() == 'chrome'):
@@ -70,24 +115,15 @@ def choose_browser(options, log_path):
             print('\nChoice :', end = ' ')
             choice_input = input()
 
+
 # navigate to page via selenium
-def extract_page(search, choice, choice_flag):
+def extract_page(choice, choice_flag):
 
     # opening site in web browser
     browser = choice
     browser.get('https://en.wikipedia.org')
 
-    # searching in seach box
-    elem = browser.find_element(by = 'name', value = 'search')
-    elem.send_keys(search() + Keys.RETURN)
-
-    # to handle loading of new pages in selenium
-    # through the method of checking staleness of page
-    # only for firefox
-    if (choice_flag == 'firefox'):
-        timeout = 30
-        old_page = browser.find_element_by_tag_name('html')
-        WebDriverWait(browser, timeout).until(staleness_of(old_page))
+    search_kind(browser)
 
     # getting the url of the new page
     url = browser.current_url
@@ -96,6 +132,7 @@ def extract_page(search, choice, choice_flag):
     browser.close()
 
     return url
+
 
 # opens a socket and returns page content
 def scraper(addr):
@@ -110,6 +147,7 @@ def scraper(addr):
     soup = BeautifulSoup(html, 'html.parser')
     return soup
 
+
 # finds the appropriate section of page
 def print_part(scrap):
     # finding the appropriate section and printing
@@ -117,8 +155,9 @@ def print_part(scrap):
     req_para = paras[0]
     return req_para.text
 
+
 # main
-choice, choice_flag = choose_browser(options, log_path)
-addr = extract_page(search, choice, choice_flag)
+choice, choice_flag = choose_browser()
+addr = extract_page(choice, choice_flag)
 scrap = scraper(addr)
 print('\nSummary:\n', print_part(scrap))
