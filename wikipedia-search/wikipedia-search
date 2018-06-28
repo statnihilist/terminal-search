@@ -24,12 +24,15 @@ def top_article():
 
 
 # custom search
-def custom_search(browser):
-    print('\nPlease specify search :', end = ' ')
+def custom_search(browser, search_input = ''):
 
     # searching in search box
     elem = browser.find_element(by = 'name', value = 'search')
-    elem.send_keys(input() + Keys.RETURN)
+    if(search_input == ''):
+        print('\nPlease specify search :', end = ' ')
+        elem.send_keys(input() + Keys.RETURN)
+    else:
+        elem.send_keys(search_input + Keys.RETURN)
 
     # to handle loading of new pages in selenium
     # through the method of checking staleness of page
@@ -43,33 +46,37 @@ def custom_search(browser):
 
 
 # what to be streamed for the user
-def search_kind(browser):
-    print('\nWhat would you like to know?')
-    print("1. Today's featured article")
-    print('2. Custom Search')
-    print('\nChoice :', end = ' ')
-    search_kind_input = input()
-    while True:
-        if(search_kind_input == '1'):
-            top_article()
-            return
-        elif(search_kind_input == '2'):
-            custom_search(browser)
-            return
-        else:
-            print('Invalid choice. Please try again!')
-            print('Choice :', end = ' ')
-            search_kind_input = input()
+def search_kind(browser, search_input = ''):
+    if(search_input == ''):
+        print('\nWhat would you like to know?')
+        print("1. Today's featured article")
+        print('2. Custom Search')
+        print('\nChoice :', end = ' ')
+        search_kind_input = input()
+        while True:
+            if(search_kind_input == '1'):
+                top_article()
+                return
+            elif(search_kind_input == '2'):
+                custom_search(browser)
+                return
+            else:
+                print('Invalid choice. Please try again!')
+                print('Choice :', end = ' ')
+                search_kind_input = input()
+    else:
+        custom_search(browser, search_input)
 
 
 # handling parameters obtained from terminal
-def search():
+def search(browser):
     if len(sys.argv) == 1:
-        search_input = search_kind()
+        search_kind(browser)
     else:
         search_input = sys.argv[1:]
         search_input = ' '.join(search_input)
-    return search_input
+        search_kind(browser, search_input)
+    return
 
 
 # setting up a headless browser
@@ -123,7 +130,7 @@ def extract_page(choice, choice_flag):
     browser = choice
     browser.get('https://en.wikipedia.org')
 
-    search_kind(browser)
+    search(browser)
 
     # getting the url of the new page
     url = browser.current_url
