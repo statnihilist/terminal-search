@@ -1063,3 +1063,25 @@ JavaScript error: https://en.wikipedia.org/w/load.php?debug=false&lang=en&module
 1530001544305	Marionette	INFO	Listening on port 34049
 1530001544408	Marionette	WARN	TLS certificate errors will be ignored for this session
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1530183997289	geckodriver	INFO	geckodriver 0.20.1
+1530183997396	geckodriver	INFO	Listening on 127.0.0.1:42977
+1530183998336	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.tTE8qylYc4gq"
+*** You are running in headless mode.
+1530184008708	Marionette	INFO	Listening on port 41581
+1530184008851	Marionette	WARN	TLS certificate errors will be ignored for this session
+1530184077167	geckodriver	INFO	geckodriver 0.20.1
+1530184077198	geckodriver	INFO	Listening on 127.0.0.1:59713
+1530184078191	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.AAzDjbPUmAAI"
+*** You are running in headless mode.
+1530184082776	Marionette	INFO	Listening on port 39379
+1530184082816	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=jquery%2Cmediawiki%7Cmediawiki.legacy.wikibits&only=scripts&skin=vector&version=18kdz1s, line 50: NS_ERROR_NOT_INITIALIZED: 
+[Parent 5163, Gecko_IOThread] WARNING: pipe error (90): Connection reset by peer: file /build/firefox-m9FtQy/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1530184168006	geckodriver	INFO	geckodriver 0.20.1
+1530184168031	geckodriver	INFO	Listening on 127.0.0.1:42209
+1530184169031	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.QnIl4Y5A523A"
+*** You are running in headless mode.
+1530184173712	Marionette	INFO	Listening on port 38861
+1530184173762	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
