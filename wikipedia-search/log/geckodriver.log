@@ -1117,3 +1117,10 @@ JavaScript error: https://en.wikipedia.org/w/load.php?debug=false&lang=en&module
 1530186351668	Marionette	WARN	TLS certificate errors will be ignored for this session
 [Parent 8281, Gecko_IOThread] WARNING: pipe error (92): Connection reset by peer: file /build/firefox-m9FtQy/firefox-60.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1530613951934	geckodriver	INFO	geckodriver 0.20.1
+1530613952041	geckodriver	INFO	Listening on 127.0.0.1:53957
+1530613952969	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.gCQhb4qfL1lG"
+*** You are running in headless mode.
+1530613961161	Marionette	INFO	Listening on port 36841
+1530613961348	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping

@@ -17,6 +17,56 @@ import requests
 from bs4 import BeautifulSoup
 
 
+
+# ---------------------------------------------------------
+# handles the browser
+
+# setting up a headless browser
+def options(flag):
+    if (flag == 'firefox'):
+        from selenium.webdriver.firefox.options import Options
+    elif (flag == 'chrome'):
+        from selenium.webdriver.chrome.options import Options
+
+    options = Options()
+    options.set_headless(headless = True)
+    return options
+
+
+# setting path to log unavoidable logs
+def log_path():
+    path_file = sys.argv[0]
+    path_dir = '/'.join(path_file.split('/')[:-1])
+    log_path = path_dir + '/log/geckodriver.log'
+    return log_path
+
+
+# choosing browser
+def choose_browser():
+    print('\nWelcome to Wikipedia-Search!')
+    print('\nPlease choose your browser : ')
+    print('1. Firefox')
+    print('2. Chrome')
+    print('\nChoice :', end = ' ')
+    choice_input = input()
+    while True:
+        if (choice_input == '1' or choice_input.lower() == 'firefox'):
+            browser = webdriver.Firefox(firefox_options = options('firefox'), \
+            log_path = log_path())
+            flag = 'firefox'
+            return browser, flag
+        elif (choice_input == '2' or choice_input.lower() == 'chrome'):
+            browser = webdriver.Chrome(chrome_options = options('chrome'))
+            flag = 'chrome'
+            return browser, flag
+        else:
+            print('Invalid choice. Please try again! ')
+            print('\nChoice :', end = ' ')
+            choice_input = input()
+
+# ---------------------------------------------------------
+# handles the search
+
 # top article streaming
 def top_article():
     # no chnanges to be done for this
@@ -79,50 +129,6 @@ def search(browser):
     return
 
 
-# setting up a headless browser
-def options(flag):
-    if (flag == 'firefox'):
-        from selenium.webdriver.firefox.options import Options
-    elif (flag == 'chrome'):
-        from selenium.webdriver.chrome.options import Options
-
-    options = Options()
-    options.set_headless(headless = True)
-    return options
-
-
-# setting path to log unavoidable logs
-def log_path():
-    path_file = sys.argv[0]
-    path_dir = '/'.join(path_file.split('/')[:-1])
-    log_path = path_dir + '/log/geckodriver.log'
-    return log_path
-
-
-# choosing browser
-def choose_browser():
-    print('\nWelcome to Wikipedia-Search!')
-    print('\nPlease choose your browser : ')
-    print('1. Firefox')
-    print('2. Chrome')
-    print('\nChoice :', end = ' ')
-    choice_input = input()
-    while True:
-        if (choice_input == '1' or choice_input.lower() == 'firefox'):
-            browser = webdriver.Firefox(firefox_options = options('firefox'), \
-            log_path = log_path())
-            flag = 'firefox'
-            return browser, flag
-        elif (choice_input == '2' or choice_input.lower() == 'chrome'):
-            browser = webdriver.Chrome(chrome_options = options('chrome'))
-            flag = 'chrome'
-            return browser, flag
-        else:
-            print('Invalid choice. Please try again! ')
-            print('\nChoice :', end = ' ')
-            choice_input = input()
-
-
 # navigate to page via selenium
 def extract_page(choice, choice_flag):
 
@@ -130,6 +136,7 @@ def extract_page(choice, choice_flag):
     browser = choice
     browser.get('https://en.wikipedia.org')
 
+    # searching for appropriate page and info
     search(browser)
 
     # getting the url of the new page
@@ -140,6 +147,8 @@ def extract_page(choice, choice_flag):
 
     return url
 
+# ---------------------------------------------------------
+# handles th final scraping
 
 # opens a socket and returns page content
 def scraper(addr):
@@ -162,8 +171,9 @@ def print_part(scrap):
     req_para = paras[0]
     return req_para.text
 
-
+# ---------------------------------------------------------
 # main
+
 choice, choice_flag = choose_browser()
 addr = extract_page(choice, choice_flag)
 scrap = scraper(addr)
