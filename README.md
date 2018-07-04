@@ -5,7 +5,7 @@
 #### For firefox users -> firefox_branch
 #### For chrome users  -> chrome_branch
 
-A terminal app to search stuff online automatically and display a summary
+A terminal app to search stuff online automatically and display a summary!
 
 Currently supported only for wikipedia. Functionality to be increased eventually.
 
@@ -21,7 +21,7 @@ Usage :
 4. For indirect search and to avail other functionality, type `wikipedia_search` in any terminal
 5. For direct noise-free search, type `wikipedia_search <name of topic>` in any terminal
 
-Currently under author development: top articles and other home page categories
+Currently under author development: top articles and other home page categories, faulty searches
 
 Proposed changes are given in todo.txt.
 
