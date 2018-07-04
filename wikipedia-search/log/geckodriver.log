@@ -1124,3 +1124,17 @@ JavaScript error: https://en.wikipedia.org/w/load.php?debug=false&lang=en&module
 1530613961161	Marionette	INFO	Listening on port 36841
 1530613961348	Marionette	WARN	TLS certificate errors will be ignored for this session
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1530694258340	geckodriver	INFO	geckodriver 0.20.1
+1530694258446	geckodriver	INFO	Listening on 127.0.0.1:53349
+1530694259353	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.PNPDPuCQGOYr"
+*** You are running in headless mode.
+1530694265193	Marionette	INFO	Listening on port 44663
+1530694265297	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1530694286858	geckodriver	INFO	geckodriver 0.20.1
+1530694286883	geckodriver	INFO	Listening on 127.0.0.1:57927
+1530694287868	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.QGooo7UP3zIH"
+*** You are running in headless mode.
+1530694291633	Marionette	INFO	Listening on port 38361
+1530694291689	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping

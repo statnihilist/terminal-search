@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 #This is a simple webscraper to scrap summary of any topic from
 #https://en.wikipedia.org
-#Assumption :
-#   The search is well-formed i.e. it can be searched directly searched in
-#   wikipedia
-#   eg. 'harvard university' will work
 
 
 # importing modules
@@ -87,12 +83,28 @@ def socket_soup(searched_url):
 def search_results(searched_url):
     #finding appropriate section of the page
     soup = socket_soup(searched_url)
-    results = []
+
+    results = []            # to store text results
+    results_links = []      # to store corresponding partial link
     for i in range(20):
-        results.append(soup.find('a', attrs = {'data-serp-pos' : i}).text)
+        content = soup.find('a', attrs = {'data-serp-pos' : i})
+        results.append(content.text)
+        results_links.append(content.get('href'))
     print('\nAvailable results:')
     for i, j in enumerate(results):
         print(str(i+1) + '.', j)
+
+    # to custom search from the given results
+    print('\nWhat would you like to search?')
+    print('Choice :', end = ' ')
+    link_no = int(input()) - 1
+
+    partial_url = results_links[link_no]
+    complete_url = 'https://en.wikipedia.org' + partial_url
+
+    soup = socket_soup(complete_url)
+    req_para = soup.find_all('p')[0]
+    print('\nSummary:\n', req_para.text)
 
     return
 
