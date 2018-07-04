@@ -80,39 +80,50 @@ def socket_soup(searched_url):
 
 
 # search results streamimg
-def search_results(searched_url):
+def search_results(browser, searched_url):
     #finding appropriate section of the page
     soup = socket_soup(searched_url)
     header_para = soup.find('p', attrs = {'class' : 'mw-search-createlink'})
     print('\n' + header_para.text)
 
-    results = []            # to store text results
-    results_links = []      # to store corresponding partial link
-    for i in range(20):
-        content = soup.find('a', attrs = {'data-serp-pos' : i})
-        results.append(content.text)
-        results_links.append(content.get('href'))
-    print('\nAvailable results:')
-    for i, j in enumerate(results):
-        print(str(i+1) + '.', j)
+    try:
+        results = []            # to store text results
+        results_links = []      # to store corresponding partial link
+        for i in range(20):
+            content = soup.find('a', attrs = {'data-serp-pos' : i})
+            results.append(content.text)
+            results_links.append(content.get('href'))
+        print('\nAvailable results:')
+        for i, j in enumerate(results):
+            print(str(i+1) + '.', j)
 
-    # to custom search from the given results
-    print('\nWhat would you like to search?')
-    print('Choice :', end = ' ')
-    link_no = int(input()) - 1
+        # to custom search from the given results
+        print('\nWhat would you like to search?(Enter a number from the list.)')
+        print('Enter 0 if you want to search something not on the list.')
+        print('Choice :', end = ' ')
+        link_no = int(input()) - 1
 
-    partial_url = results_links[link_no]
-    complete_url = 'https://en.wikipedia.org' + partial_url
+        if(link_no != -1):
+            partial_url = results_links[link_no]
+            complete_url = 'https://en.wikipedia.org' + partial_url
 
-    soup = socket_soup(complete_url)
-    req_para = soup.find_all('p')[0]
-    print('\nSummary:\n', req_para.text)
+            soup = socket_soup(complete_url)
+            req_para = soup.find_all('p')[0]
+            print('\nSummary:\n', req_para.text)
+
+        if(link_no == -1):
+            custom_search(browser)
+        else:
+            pass
+    except:
+        print('There are no results matching the query.')
+        custom_search(browser)
 
     return
 
 
 # prints page content for custom search
-def legit_page(search_url):
+def legit_page(searched_url):
     # finding appropriate section of the page
     soup = socket_soup(searched_url)
     req_para = soup.find_all('p')[0]
@@ -123,7 +134,7 @@ def legit_page(search_url):
 
 # top article streaming
 def top_article():
-    # no chnanges to be done for this
+    # no changes to be done for this
     return
 
 
@@ -131,7 +142,7 @@ def top_article():
 def custom_search(browser, search_input = ''):
 
     # searching in search box
-    elem = browser.find_element(by = 'name', value = 'search')
+    elem = browser.find_element(by = 'id', value = 'searchInput')
     if(search_input == ''):
         print('\nPlease specify search :', end = ' ')
         elem.send_keys(input() + Keys.RETURN)
@@ -149,12 +160,12 @@ def custom_search(browser, search_input = ''):
         pass
 
     # check if search is appropriate or not
-    search_url = browser.current_url
-    parsed_url = urlparse(search_url)
+    searched_url = browser.current_url
+    parsed_url = urlparse(searched_url)
     if(parsed_url.path == '/w/index.php'):
-        search_results(search_url)
+        search_results(browser, searched_url)
     else:
-        legit_page(search_url)
+        legit_page(searched_url)
 
     return
 
