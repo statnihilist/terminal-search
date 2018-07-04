@@ -30,7 +30,7 @@ def options(flag):
     return options
 
 
-# setting path to log unavoidable logs
+# setting path to log unavoidable logs for firefox
 def log_path():
     path_file = sys.argv[0]
     path_dir = '/'.join(path_file.split('/')[:-1])
@@ -89,6 +89,8 @@ def search_results(browser, searched_url):
     try:
         results = []            # to store text results
         results_links = []      # to store corresponding partial link
+
+        # finding all possible results on the page
         for i in range(20):
             content = soup.find('a', attrs = {'data-serp-pos' : i})
             results.append(content.text)
@@ -103,10 +105,12 @@ def search_results(browser, searched_url):
         print('Choice :', end = ' ')
         link_no = int(input()) - 1
 
+        # generating complete url
         if(link_no != -1):
             partial_url = results_links[link_no]
             complete_url = 'https://en.wikipedia.org' + partial_url
 
+            # finding appropriate section of the page
             soup = socket_soup(complete_url)
             req_para = soup.find_all('p')[0]
             print('\nSummary:\n', req_para.text)
@@ -133,8 +137,12 @@ def legit_page(searched_url):
 
 
 # top article streaming
-def top_article():
-    # no changes to be done for this
+def top_article(searched_url):
+    # finding appropriate section of the pages
+    soup = socket_soup(searched_url)
+    req_para = soup.find_all('p')[0]
+    print('\nFeatured Article:\n', req_para.text)
+
     return
 
 
@@ -180,7 +188,7 @@ def search_kind(browser, search_input = ''):
         search_kind_input = input()
         while True:
             if(search_kind_input == '1'):
-                top_article()
+                top_article(browser.current_url)
                 return
             elif(search_kind_input == '2'):
                 custom_search(browser)
@@ -208,7 +216,7 @@ def search(browser):
 
 
 # navigate to page via selenium
-def extract_page(choice, choice_flag):
+def searcher(choice, choice_flag):
 
     # opening site in web browser
     browser = choice
@@ -226,4 +234,4 @@ def extract_page(choice, choice_flag):
 # main
 
 choice, choice_flag = choose_browser()
-extract_page(choice, choice_flag)
+searcher(choice, choice_flag)
