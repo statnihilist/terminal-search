@@ -83,6 +83,8 @@ def socket_soup(searched_url):
 def search_results(searched_url):
     #finding appropriate section of the page
     soup = socket_soup(searched_url)
+    header_para = soup.find('p', attrs = {'class' : 'mw-search-createlink'})
+    print('\n' + header_para.text)
 
     results = []            # to store text results
     results_links = []      # to store corresponding partial link
