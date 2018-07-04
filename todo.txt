@@ -1,13 +1,9 @@
 1. faster connection of http socket (very high wall times, performs on faster networks >30Mbps)
-3. add option for faulty search (partially removes one assumption)
-4. give option to search part of page on wikipedia
-7. Wikipedia search results option
-8. Wikipedia top articles streaming
-9. static website on Jekyll (to represent project)
-10.add .gitignore files
-14.coordinates exception handler
-15.edit description (no noise format) and insights
-16.dropdowns on terminal
-
-Long-term:
-1. add functionality for google search
+2. give option to search part of page on wikipedia
+3. Wikipedia top articles streaming
+4. static website on Jekyll (to represent project)
+5. add .gitignore files
+6. coordinates exception handler
+7. edit description (no noise format) and insights
+8. dropdowns on terminal
+9. searches for larger summary in case of unusually small summaries
