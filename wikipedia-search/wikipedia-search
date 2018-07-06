@@ -140,7 +140,7 @@ def legit_page(searched_url):
 def top_article(searched_url):
     # finding appropriate section of the pages
     soup = socket_soup(searched_url)
-    req_para = soup.find_all('p')[0]
+    req_para = soup.find('div', attrs = {'id' : 'mp-tfa'})
     print('\nFeatured Article:\n', req_para.text)
 
     return
