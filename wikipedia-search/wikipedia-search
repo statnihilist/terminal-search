@@ -128,9 +128,15 @@ def search_results(browser, searched_url):
 
 # prints page content for custom search
 def legit_page(searched_url):
+
     # finding appropriate section of the page
     soup = socket_soup(searched_url)
-    req_para = soup.find_all('p')[0]
+
+    for i in soup.find_all('p'):
+        if i.text != '\n':
+            req_para = i
+            break
+            
     print('\nSummary:\n', req_para.text)
 
     return
