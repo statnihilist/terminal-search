@@ -1145,3 +1145,40 @@ JavaScript error: https://en.wikipedia.org/w/load.php?debug=false&lang=en&module
 1530700877213	Marionette	INFO	Listening on port 39289
 1530700877351	Marionette	WARN	TLS certificate errors will be ignored for this session
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1556863507077	geckodriver	INFO	geckodriver 0.20.1
+1556863507102	geckodriver	INFO	Listening on 127.0.0.1:46039
+1556863508133	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-profile" "/tmp/rust_mozprofile.9Aw0x92PJXyw"
+*** You are running in headless mode.
+1556863509770	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1556863509772	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1556863509772	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1556863510073	Marionette	TRACE	Received observer notification profile-after-change
+1556863510700	Marionette	TRACE	Received observer notification command-line-startup
+1556863510701	Marionette	TRACE	Received observer notification nsPref:changed
+1556863510701	Marionette	DEBUG	Init aborted (running=false, enabled=true, finalUIStartup=false)
+1556863512017	Marionette	TRACE	Received observer notification toplevel-window-ready
+1556863514412	Marionette	TRACE	Received observer notification sessionstore-windows-restored
+1556863514412	Marionette	TRACE	Waiting until startup recorder finished recording startup scripts...
+1556863514779	Marionette	TRACE	All scripts recorded.
+1556863514780	Marionette	DEBUG	Setting recommended pref app.update.disabledForTesting to true
+1556863514781	Marionette	DEBUG	Setting recommended pref browser.contentblocking.introCount to 99
+1556863514782	Marionette	DEBUG	Setting recommended pref browser.newtabpage.enabled to false
+1556863514783	Marionette	DEBUG	Setting recommended pref datareporting.policy.dataSubmissionPolicyAccepted to false
+1556863514784	Marionette	DEBUG	Setting recommended pref dom.disable_beforeunload to true
+1556863514785	Marionette	DEBUG	Setting recommended pref toolkit.cosmeticAnimations.enabled to false
+1556863515067	Marionette	INFO	Listening on port 46469
+1556863515067	Marionette	DEBUG	Remote service is active
+1556863515165	Marionette	DEBUG	Accepted connection 0 from 127.0.0.1:50882
+1556863515170	Marionette	DEBUG	0 -> [0,1,"newSession",{"acceptInsecureCerts":true,"browserName":"firefox","capabilities":{"desiredCapabilities":{"acceptInsecureCerts":true,"browserName":"firefox"}}}]
+1556863515172	Marionette	DEBUG	0 <- [1,1,{"error":"unknown command","message":"newSession","stacktrace":"WebDriverError@chrome://marionette/content/error.js:179: ... et@chrome://marionette/content/server.js:235:8\n_onJSONObjectReady/<@chrome://marionette/content/transport.js:493:9\n"},null]
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:190:13
+
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
