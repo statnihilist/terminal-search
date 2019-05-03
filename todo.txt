@@ -7,3 +7,4 @@
 7. edit description (no noise format) and insights
 8. dropdowns on terminal
 9. searches for larger summary in case of unusually small summaries
+10. home page categories
