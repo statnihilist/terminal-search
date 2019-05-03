@@ -25,7 +25,7 @@ def options(flag):
         from selenium.webdriver.chrome.options import Options
 
     options = Options()
-    options.set_headless(headless = True)
+    #options.headless = True
 
     return options
 
@@ -49,12 +49,12 @@ def choose_browser():
     choice_input = input()
     while True:
         if (choice_input == '1' or choice_input.lower() == 'firefox'):
-            browser = webdriver.Firefox(firefox_options = options('firefox'), \
-            log_path = log_path())
+            browser = webdriver.Firefox(options = options('firefox'), \
+            service_log_path = log_path())
             flag = 'firefox'
             return browser, flag
         elif (choice_input == '2' or choice_input.lower() == 'chrome'):
-            browser = webdriver.Chrome(chrome_options = options('chrome'))
+            browser = webdriver.Chrome(options = options('chrome'))
             flag = 'chrome'
             return browser, flag
         else:
