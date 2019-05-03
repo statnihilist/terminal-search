@@ -4,11 +4,11 @@ sudo ln -s $(pwd)/drivers/chromedriver /usr/local/bin/chromedriver
 pip3 install beautifulsoup4
 pip3 install requests
 pip3 install selenium
-chmod +x $(pwd)/wikipedia-search/wikipedia-search
-sudo cp $(pwd)/wikipedia-search/wikipedia-search /usr/bin
+#chmod +x $(pwd)/wikipedia-search/wikipedia-search
+#sudo cp $(pwd)/wikipedia-search/wikipedia-search /usr/bin
 
 #legacy code
-#part1="export PATH=\$PATH:"
-#part2="$(pwd)"
-#part3="/wikipedia-search"
-#sudo echo $part1$part2$part3 >> ~/.bashrc
+part1="export PATH=\$PATH:"
+part2="$(pwd)"
+part3="/wikipedia-search"
+sudo echo $part1$part2$part3 >> ~/.bashrc

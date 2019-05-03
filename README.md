@@ -15,8 +15,9 @@ Requirements:
 Usage : 
 1. Clone into a local repository and run `cd terminal-search`
 2. Run the `setup` file in a terminal as `<path to current folder>/setup` 
-3. For indirect search and to avail other functionality, type `wikipedia_search` in any terminal
-4. For direct noise-free search, type `wikipedia_search <name of topic>` in any terminal
+3. Change to home directory and run `source .bashrc`
+4. For indirect search and to avail other functionality, type `wikipedia_search` in any terminal
+5. For direct noise-free search, type `wikipedia_search <name of topic>` in any terminal
 
 Currently under author development: deployment changes
 

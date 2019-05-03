@@ -136,7 +136,7 @@ def legit_page(searched_url):
         if i.text != '\n':
             req_para = i
             break
-            
+
     print('\nSummary:\n', req_para.text)
 
     return
